@@ -1,4 +1,4 @@
-package com.example.perfect_project
+package com.competo.perfect_project
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
