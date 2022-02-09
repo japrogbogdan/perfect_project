@@ -4,28 +4,23 @@ import android.content.Context
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.Toast
-import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.viewbinding.ViewBinding
 import com.competo.core.presentation.navigation.IActivityNavigable
 import com.competo.core.presentation.navigation.INavigable
 import com.competo.core.presentation.navigation.navigate
-import com.competo.core.presentation.updateConfigurationIfSupported
+import com.competo.core.presentation.extensions.updateConfigurationIfSupported
 
-abstract class BaseActivity <V : ViewDataBinding> : AppCompatActivity()  {
+abstract class BaseActivity <V : ViewBinding> : AppCompatActivity()  {
 
     protected lateinit var binding: V
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-        binding = DataBindingUtil.setContentView(this, getLayoutRes())
-        binding.lifecycleOwner = this
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = getViewBinding()
+        setContentView(binding.root)
     }
-
-    @LayoutRes
-    abstract fun getLayoutRes(): Int
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
@@ -43,4 +38,6 @@ abstract class BaseActivity <V : ViewDataBinding> : AppCompatActivity()  {
             ).show()
         }
     }
+
+    abstract fun getViewBinding(): V
 }
