@@ -1,4 +1,4 @@
-package com.competo.core.presentation
+package com.competo.core.presentation.extensions
 
 import android.content.res.Configuration
 import android.os.Build

@@ -5,9 +5,10 @@ import android.os.PersistableBundle
 import com.competo.core.presentation.activity.BaseNavActivity
 import com.competo.feature_auth.databinding.AuthActivityLayoutBinding
 
-class AuthActivity : BaseNavActivity<AuthActivityLayoutBinding>(){
+class AuthActivity : BaseNavActivity<AuthActivityLayoutBinding>() {
 
-    override fun getLayoutRes(): Int = R.layout.auth_activity_layout
+    override fun getViewBinding(): AuthActivityLayoutBinding =
+        AuthActivityLayoutBinding.inflate(layoutInflater)
 
     override fun getNavHostFragmentId(): Int = R.id.feature_auth_nav_host_fragment
 
