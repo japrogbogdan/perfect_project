@@ -1,5 +1,7 @@
 package com.competo.feature_auth.presentation
 
+import android.os.Bundle
+import android.view.View
 import com.competo.core.presentation.fragment.BaseBindingFragment
 import com.competo.feature_auth.R
 import com.competo.feature_auth.databinding.AuthOtpLayoutBinding
@@ -20,4 +22,10 @@ class AuthOtpFragment : BaseBindingFragment<AuthOtpLayoutBinding, AuthOtpViewMod
 
     override val viewModel: AuthOtpViewModel by viewModel()
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val phone = getStringExtra(AUTH_OTP_FRAGMENT_PHONE)
+
+    }
 }
