@@ -3,7 +3,6 @@ package com.competo.feature_auth
 import com.competo.core.presentation.viewModel.BaseViewModel
 import com.competo.feature_auth.presentation.AuthOtpViewModel
 import com.competo.feature_auth.presentation.AuthPhoneViewModel
-import com.competo.feature_auth.presentation.navigation.FeatureAuthNavigator
 import com.competo.feature_auth.presentation.navigation.FeatureAuthNavigatorInterface
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.module.Module
@@ -19,10 +18,4 @@ fun createAuthModule(): List<Module> {
     }
 
     return arrayListOf(viewModels)
-}
-
-val createAuthNavigationModule: Module = module {
-    factory { (viewModel: BaseViewModel) -> FeatureAuthNavigator(viewModel) } binds arrayOf(
-        FeatureAuthNavigatorInterface::class
-    )
 }
