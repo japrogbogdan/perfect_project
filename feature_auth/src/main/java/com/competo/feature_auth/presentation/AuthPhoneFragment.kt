@@ -22,6 +22,19 @@ class AuthPhoneFragment : BaseBindingFragment<AuthPhoneLayoutBinding, AuthPhoneV
 
         binding.txt.setOnClickListener {
             viewModel.sendPhone("123456")
+
+//            val request = NavDeepLinkBuilder(requireContext()).createPendingIntent().
+
+//            val request = NavDeepLinkRequest.Builder
+//                .fromUri("android-app://example.google.app/settings_fragment_two".toUri())
+//                .build()
+
+//            findNavController().createDeepLink()
+//                .setGraph(R.navigation.graph_feature_auth)
+//                .setArguments(bundleOf(AuthOtpFragment.AUTH_OTP_FRAGMENT_PHONE to "123456"))
+//                .setDestination(R.id.authOtpFragment)
+
+//            findNavController().navigate(R.id.authOtpFragment, bundleOf(AuthOtpFragment.AUTH_OTP_FRAGMENT_PHONE to "123456"))
         }
     }
 }

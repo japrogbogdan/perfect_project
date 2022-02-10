@@ -3,11 +3,10 @@ package com.competo.core.presentation.viewModel
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.Observer
-import com.competo.core.presentation.activity.BaseActivity
+import com.competo.core.presentation.activity.BaseNavActivity
 import com.competo.core.presentation.extensions.hideSoftKeyboardForView
 import com.competo.core.presentation.fragment.BaseFragment
-import com.competo.core.presentation.fragment.IContainerFragment
-import com.competo.core.presentation.navigation.INavigable
+import com.competo.core.presentation.navigation.DirectionNavigator
 
 abstract class BaseViewModelFragment<VM : BaseViewModel> : BaseFragment() {
 
@@ -24,11 +23,7 @@ abstract class BaseViewModelFragment<VM : BaseViewModel> : BaseFragment() {
         })
     }
 
-    open fun navigateTo(navigation: INavigable) {
-        val containerFragment = this as? IContainerFragment
-        if (containerFragment?.navigateFromChildFragment(this, navigation) == true) {
-            return
-        }
-        (activity as? BaseActivity<*>)?.navigateTo(navigation, this)
+    open fun navigateTo(navigation: DirectionNavigator) {
+        (activity as? BaseNavActivity<*>)?.navigateTo(navigation)
     }
 }
