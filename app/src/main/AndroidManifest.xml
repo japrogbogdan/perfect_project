@@ -10,8 +10,14 @@
         android:supportsRtl="true"
         android:name=".App"
         android:theme="@style/Theme.Perfect_project">
+
         <activity
             android:name="com.competo.perfect_project.MainActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name="com.competo.feature_auth.presentation.AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

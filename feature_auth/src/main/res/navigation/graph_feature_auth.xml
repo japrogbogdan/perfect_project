@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/graph_feature_auth">
+    android:id="@+id/graph_feature_auth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:startDestination="@id/authPhoneFragment">
 
+    <fragment
+        android:id="@+id/authPhoneFragment"
+        android:name="com.competo.feature_auth.presentation.AuthPhoneFragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/authOtpFragment"
+        android:name="com.competo.feature_auth.presentation.AuthOtpFragment"/>
 </navigation>

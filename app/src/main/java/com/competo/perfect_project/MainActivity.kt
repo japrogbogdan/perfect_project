@@ -10,6 +10,6 @@ import com.competo.perfect_project.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun getViewBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
+    override fun getLayoutRes(): Int = R.layout.activity_main
 
 }

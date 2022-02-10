@@ -16,3 +16,4 @@ rootProject.name = "perfect_project"
 include ':app'
 include ':core'
 include ':feature_auth'
+include ':navigation'
