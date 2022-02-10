@@ -8,12 +8,7 @@ import com.competo.feature_auth.databinding.AuthActivityLayoutBinding
 
 class AuthActivity : BaseNavActivity<AuthActivityLayoutBinding>() {
 
-
     override fun getNavHostFragmentId(): Int = R.id.feature_auth_nav_host_fragment
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
-    }
 
     override fun getLayoutRes(): Int = R.layout.auth_activity_layout
 }
