@@ -2,7 +2,11 @@ package com.competo.feature_auth.presentation
 
 class AuthPhoneViewModel : BaseAuthViewModel(){
 
-    fun navigateToOtp(phoneNumber: String){
+
+    fun sendPhone(phoneNumber: String){
+        // request for phone
+        // get answer and navigate
         navigator.openOtpCode(phoneNumber)
+
     }
 }

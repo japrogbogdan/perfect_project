@@ -21,7 +21,7 @@ class AuthPhoneFragment : BaseBindingFragment<AuthPhoneLayoutBinding, AuthPhoneV
         super.onViewCreated(view, savedInstanceState)
 
         binding.txt.setOnClickListener {
-            viewModel.navigateToOtp("123456")
+            viewModel.sendPhone("123456")
         }
     }
 }
