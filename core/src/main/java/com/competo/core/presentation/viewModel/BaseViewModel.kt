@@ -1,6 +1,7 @@
 package com.competo.core.presentation.viewModel
 
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -23,7 +24,7 @@ abstract class BaseViewModel : ViewModel(), KoinComponent {
 
     protected abstract val navigator: Navigator
 
-    fun navigate(fragmentDirection: FragmentDirection) {
+    fun navigate(activity: AppCompatActivity? = null, fragmentDirection: FragmentDirection) {
         hideKeyboard()
         _navigateLiveEvent.postValue(fragmentDirection)
     }
