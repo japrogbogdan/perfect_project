@@ -3,7 +3,7 @@ package com.competo.perfect_project
 import android.app.Application
 import com.competo.core.base.di.KoinManager
 import com.competo.core.base.di.createCoreModules
-import com.competo.feature_auth.createAuthModule
+import com.competo.feature_auth.di.createAuthModule
 import com.competo.navigation.di.createNavigationModule
 import org.koin.core.component.KoinComponent
 import org.koin.core.module.Module
