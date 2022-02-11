@@ -1,4 +1,4 @@
-package com.competo.navigation.navigation.auth
+package com.competo.navigation
 
 import com.competo.core.presentation.navigation.Navigator
 import com.competo.core.presentation.viewModel.BaseViewModel

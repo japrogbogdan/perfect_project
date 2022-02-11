@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.competo.core.presentation.viewModel.BaseViewModel
 import com.competo.core.presentation.viewModel.BaseViewModelFragment
 
-abstract class BaseBindingFragment<B : ViewDataBinding, VM : BaseViewModel> :
-    BaseViewModelFragment<VM>() {
+abstract class BaseBindingFragment<B : ViewDataBinding, VM : BaseViewModel>(@LayoutRes private val layoutRes: Int) :
+    BaseViewModelFragment<VM>(layoutRes) {
 
     private var _binding: B? = null
 
@@ -28,7 +29,7 @@ abstract class BaseBindingFragment<B : ViewDataBinding, VM : BaseViewModel> :
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DataBindingUtil.inflate(inflater, getLayoutRes(), container, false)
+        _binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         binding.lifecycleOwner = this
         bindingViewModelEqualViewModel()
         return binding.root

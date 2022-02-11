@@ -8,16 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.competo.core.presentation.extensions.updateConfigurationIfSupported
 
-abstract class BaseActivity <V : ViewDataBinding> : AppCompatActivity()  {
+abstract class BaseActivity<V : ViewDataBinding>(@LayoutRes private val layoutRes: Int) : AppCompatActivity() {
 
     protected lateinit var binding: V
 
-    @LayoutRes
-    abstract fun getLayoutRes(): Int
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, getLayoutRes())
+        binding = DataBindingUtil.setContentView(this, layoutRes)
         binding.lifecycleOwner = this
     }
 
@@ -25,16 +22,4 @@ abstract class BaseActivity <V : ViewDataBinding> : AppCompatActivity()  {
         super.attachBaseContext(base)
         applyOverrideConfiguration(updateConfigurationIfSupported())
     }
-
-//    open fun navigateTo(navigation: INavigable, fragment: Fragment?) {
-//        if (navigation is IActivityNavigable) {
-//            navigate(this, navigation)
-//        } else {
-//            Toast.makeText(
-//                this,
-//                navigation::class.java.simpleName + "navigation not implemented",
-//                Toast.LENGTH_SHORT
-//            ).show()
-//        }
-//    }
 }

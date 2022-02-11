@@ -6,15 +6,12 @@ import androidx.fragment.app.Fragment
 import com.competo.core.presentation.activity.BaseActivity
 
 //TODO Base Fragment for all fragments in application
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment(@LayoutRes private val layoutRes: Int) : Fragment() {
 
     companion object {
         private const val DEFAULT_TIME_DELAY = 130L
         private const val DELAY_KEYBOARD_HIDE = 200L
     }
-
-    @LayoutRes
-    abstract fun getLayoutRes(): Int
 
     protected fun getBooleanExtra(extra: String, def: Boolean = false): Boolean =
         arguments?.getBoolean(extra, def) ?: def
