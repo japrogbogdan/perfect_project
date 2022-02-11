@@ -8,7 +8,7 @@ import com.competo.core.presentation.navigation.Navigator
 import com.hadilq.liveevent.LiveEvent
 import org.koin.core.component.KoinComponent
 
-abstract class BaseViewModel() : ViewModel(), KoinComponent {
+abstract class BaseViewModel : ViewModel(), KoinComponent {
 
     private val _navigateLiveEvent: SafeLiveEvent<DirectionNavigator> = SafeLiveEvent()
     private val _hideKeyboard: LiveEvent<Boolean> = LiveEvent()
@@ -18,7 +18,7 @@ abstract class BaseViewModel() : ViewModel(), KoinComponent {
 
     protected abstract val navigator: Navigator
 
-    fun navigate(target: DirectionNavigator){
+    fun navigate(target: DirectionNavigator) {
         hideKeyboard()
         _navigateLiveEvent.postValue(target)
     }
