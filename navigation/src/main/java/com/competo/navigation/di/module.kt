@@ -1,19 +1,17 @@
-package com.competo.navigation
+package com.competo.navigation.di
 
-import com.competo.core.presentation.navigation.INavigator
 import com.competo.core.presentation.viewModel.BaseViewModel
-import com.competo.feature_auth.presentation.navigation.IFeatureAuthNavigator
-import com.competo.navigation.navigation.base.Navigator
+import com.competo.feature_auth.presentation.navigation.FeatureAuthNavigatorInterface
+import com.competo.navigation.AppFragmentNavigator
 import org.koin.core.module.Module
 import org.koin.dsl.binds
 import org.koin.dsl.module
 
-fun createNavigationModule(): ArrayList<Module> {
+fun createNavigationModule(): ArrayList<Module> =
+    arrayListOf(createFragmentNavigationModule)
 
-    val navigation = module {
-        factory { (viewModel: BaseViewModel) -> Navigator(viewModel) } binds arrayOf(
-            INavigator::class, IFeatureAuthNavigator::class
-        )
-    }
-    return arrayListOf(navigation)
+val createFragmentNavigationModule: Module = module {
+    factory { (viewModel: BaseViewModel) -> AppFragmentNavigator(viewModel) } binds arrayOf(
+        FeatureAuthNavigatorInterface::class
+    )
 }

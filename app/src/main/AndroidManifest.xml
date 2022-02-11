@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Perfect_project">
 
         <activity
-            android:name="com.competo.perfect_project.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
         </activity>
 
