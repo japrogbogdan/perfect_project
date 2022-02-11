@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 
-fun navigate(activity: Activity?, navigation: ActivityDestinationNavigator) {
+fun navigate(activity: Activity?, navigation: ActivityDestinationFragment) {
     if (activity == null) return
 
     val intent = Intent().setClassName(activity, navigation.activityClassName)

@@ -2,6 +2,7 @@ package com.competo.feature_auth.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.setFragmentResultListener
 import com.competo.core.presentation.fragment.BaseBindingFragment
 import com.competo.feature_auth.R
 import com.competo.feature_auth.databinding.AuthPhoneLayoutBinding
@@ -21,6 +22,10 @@ class AuthPhoneFragment :
 
         binding.txt.setOnClickListener {
             viewModel.sendPhone("123456")
+        }
+
+        setFragmentResultListener("key_1") { _, bundle ->
+            binding.txt.text = bundle.getString("one")
         }
     }
 }

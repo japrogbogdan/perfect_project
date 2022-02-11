@@ -2,12 +2,14 @@ package com.competo.feature_auth.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import com.competo.core.presentation.fragment.BaseBindingFragment
 import com.competo.feature_auth.R
 import com.competo.feature_auth.databinding.AuthOtpLayoutBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class AuthOtpFragment : BaseBindingFragment<AuthOtpLayoutBinding, AuthOtpViewModel>(R.layout.auth_otp_layout) {
+class AuthOtpFragment :
+    BaseBindingFragment<AuthOtpLayoutBinding, AuthOtpViewModel>(R.layout.auth_otp_layout) {
 
     companion object {
 
@@ -25,5 +27,8 @@ class AuthOtpFragment : BaseBindingFragment<AuthOtpLayoutBinding, AuthOtpViewMod
 
         val phone = getStringExtra(AUTH_OTP_FRAGMENT_PHONE)
 
+        binding.btnView.setOnClickListener {
+            viewModel.navigateBack("key_1" to bundleOf("one" to "result string"))
+        }
     }
 }
