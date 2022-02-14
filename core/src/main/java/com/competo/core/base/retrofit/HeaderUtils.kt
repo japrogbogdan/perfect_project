@@ -36,16 +36,16 @@ object HeaderUtils : KoinComponent {
         )
     }
 
-    fun getAuthRetrofitHeader(preferencesHelper: PreferencesHelper) : Headers{
+    fun getAuthRetrofitHeader() : Headers{
         return Headers.headersOf(
             ACCEPT, APPLICATION_JSON,
-            ACCEPT_LANG_HEADER_NAME, preferencesHelper.language,
-            CONTENT_LANG_HEADER_NAME, preferencesHelper.language,
-            HTTP_CONTENT_LANGUAGE, preferencesHelper.language,
-            HTTP_ACCEPT_LANGUAGE, preferencesHelper.language,
-            X_USER_AGENT, X_USER_AGENT_VALUE,
-            X_APP_VERSION,"1",
-            TRACE_SESSION,preferencesHelper.session,
+//            ACCEPT_LANG_HEADER_NAME, preferencesHelper.language,
+//            CONTENT_LANG_HEADER_NAME, preferencesHelper.language,
+//            HTTP_CONTENT_LANGUAGE, preferencesHelper.language,
+//            HTTP_ACCEPT_LANGUAGE, preferencesHelper.language,
+//            X_USER_AGENT, X_USER_AGENT_VALUE,
+//            X_APP_VERSION,"1",
+//            TRACE_SESSION,preferencesHelper.session,
         )
     }
 }

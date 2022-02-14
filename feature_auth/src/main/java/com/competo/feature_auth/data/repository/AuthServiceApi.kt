@@ -6,7 +6,7 @@ import io.reactivex.Observable
 import retrofit2.http.Body
 import retrofit2.http.POST
 
-interface IAuthService {
+interface AuthServiceApi {
 
     companion object {
 
@@ -14,7 +14,7 @@ interface IAuthService {
     }
 
     @POST("$URL_CUSTOMER/v2/clients/account/check-otp-code-and-confirm")
-    fun checkOtpAndConfirm(
+    suspend fun checkOtpAndConfirm(
         @Body otpCode: OtpCodeRequest
-    ): Observable<AccessTokenResponse>
+    ): AccessTokenResponse
 }

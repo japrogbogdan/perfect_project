@@ -1,8 +1,8 @@
 package com.competo.core.base.retrofit
 
 import android.text.TextUtils
-import com.competo.core.data.ServerException
-import com.competo.core.data.SessionExpiredException
+import com.competo.core.data.exception.ServerException
+import com.competo.core.data.exception.SessionExpiredException
 import com.competo.core.presentation.preferences.PreferencesHelper
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.OkHttpClient
@@ -14,6 +14,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
     Retrofit.Builder()
+        .baseUrl("https://customer-stage.tibuy.bg")
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(okHttpClient)
         .addConverterFactory(ScalarsConverterFactory.create())
@@ -39,11 +40,11 @@ fun provideOkHttpClient(preferences: PreferencesHelper): OkHttpClient =
         .setupLogging()
         .build()
 
-fun provideAuthOkHttpClient(preferences: PreferencesHelper): OkHttpClient =
+fun provideAuthOkHttpClient(): OkHttpClient =
     OkHttpClient().newBuilder()
         .addInterceptor { chain ->
             val requestBuilder: Request.Builder = chain.request().newBuilder()
-            HeaderUtils.getAuthRetrofitHeader(preferences).forEach {
+            HeaderUtils.getAuthRetrofitHeader().forEach {
                 requestBuilder.addHeader(it.first, it.second)
             }
             return@addInterceptor chain.proceed(requestBuilder.build())

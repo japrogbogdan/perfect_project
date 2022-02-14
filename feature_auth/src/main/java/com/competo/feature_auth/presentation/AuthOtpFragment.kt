@@ -30,5 +30,9 @@ class AuthOtpFragment :
         binding.btnView.setOnClickListener {
             viewModel.navigateBack("key_1" to bundleOf("one" to "result string"))
         }
+
+        binding.test.setOnClickListener {
+            viewModel.get()
+        }
     }
 }

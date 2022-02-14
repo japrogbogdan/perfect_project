@@ -1,3 +1,3 @@
-package com.competo.core.data
+package com.competo.core.data.exception
 
 class SessionExpiredException : Throwable()
