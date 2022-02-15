@@ -14,7 +14,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit =
     Retrofit.Builder()
-        .baseUrl("https://customer-stage.tibuy.bg")
+        .baseUrl("https://customer.umico.az")
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .client(okHttpClient)
         .addConverterFactory(ScalarsConverterFactory.create())

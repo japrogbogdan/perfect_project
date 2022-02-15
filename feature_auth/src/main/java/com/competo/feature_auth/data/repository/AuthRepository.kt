@@ -7,11 +7,11 @@ import com.competo.feature_auth.domain.entity.AccessToken
 
 class AuthRepository(private val api: AuthServiceApi) : AuthRepositoryInterface {
 
-    override suspend fun checkOtpAndConfirm(otp: OtpCodeRequest): AccessToken {
-        return convertToDomain(api.checkOtpAndConfirm(otp))
-    }
+    override suspend fun enterViaPhone(phone: String) = api.enterViaPhone(phone)
 
-    private fun convertToDomain(model: Any): AccessToken {
-        return CheckOtpAndConfirmMapper(model as AccessTokenResponse).model
-    }
+    override suspend fun checkOtpAndConfirm(otp: OtpCodeRequest): AccessToken =
+        convertToDomain(api.checkOtpAndConfirm(otp))
+
+    private fun convertToDomain(model: Any): AccessToken =
+        CheckOtpAndConfirmMapper(model as AccessTokenResponse).model
 }

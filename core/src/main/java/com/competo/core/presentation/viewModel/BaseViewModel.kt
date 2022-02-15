@@ -1,16 +1,19 @@
 package com.competo.core.presentation.viewModel
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.competo.core.presentation.SafeLiveEvent
-import com.competo.core.presentation.activity.BaseActivity
 import com.competo.core.presentation.navigation.FragmentDirection
 import com.competo.core.presentation.navigation.Navigator
 import com.hadilq.liveevent.LiveEvent
+import kotlinx.coroutines.CoroutineExceptionHandler
 import org.koin.core.component.KoinComponent
+import retrofit2.HttpException
+import java.net.ConnectException
 
 abstract class BaseViewModel : ViewModel(), KoinComponent {
 
@@ -21,6 +24,18 @@ abstract class BaseViewModel : ViewModel(), KoinComponent {
     val navigateLiveEvent: LiveData<FragmentDirection> = _navigateLiveEvent
     val navigateBackLiveEvent: SafeLiveEvent<Pair<String, Bundle>> = _navigateBackLiveEvent
     val hideKeyboard: LiveData<Boolean> = _hideKeyboard
+
+    //keep here to test common error handler logic
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
+        val defaultErrorMsg = "Something went wrong"
+        val errorMsg = when (throwable) {
+            is ConnectException -> ""
+            is HttpException -> ""
+            else -> defaultErrorMsg
+        }
+
+        Log.d("ExceptionHandler", errorMsg)
+    }
 
     protected abstract val navigator: Navigator
 
