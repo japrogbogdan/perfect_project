@@ -22,15 +22,12 @@ class AuthOtpViewModel(private val interactor: AuthInteractor) : BaseViewModel()
     fun get() {
 
         viewModelScope.launch {
-            when (val result = interactor.enterViaPhone()) {
-                is BaseInteractor.Result.Success<Any> -> {
-                }
-                is BaseInteractor.Result.Error -> {
-                    null
-                }
-            }
+            interactor.sentOtpCode(success = { accessToken ->
+                launch { val temp = interactor.enterViaPhone() }
+            })
         }
 
+        // also can call request and get general Result
         viewModelScope.launch {
             when (val result = interactor.sentOtpCode()) {
                 is BaseInteractor.Result.Success<AccessToken> -> {

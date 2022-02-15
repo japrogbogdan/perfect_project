@@ -15,7 +15,7 @@ interface AuthServiceApi {
     }
 
     @GET("$URL_CUSTOMER/v2/clients/account/sign-in")
-    suspend fun enterViaPhone(@Query("phone") phone: String): Any
+    suspend fun enterViaPhone(@Query("phone") phone: String)
 
     @POST("$URL_CUSTOMER/v2/clients/account/sign-in")
     suspend fun checkOtpAndConfirm(@Body otpCode: OtpCodeRequest): AccessTokenResponse
