@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.competo.core.domain.interactors.BaseInteractor
 import com.competo.core.presentation.SafeLiveEvent
 import com.competo.core.presentation.viewModel.BaseViewModel
-import com.competo.feature_auth.domain.entity.AccessToken
+import com.competo.feature_auth.domain.entities.AccessToken
 import com.competo.feature_auth.domain.interactors.AuthInteractor
 import com.competo.feature_auth.presentation.navigation.FeatureAuthNavigatorInterface
 import kotlinx.coroutines.launch

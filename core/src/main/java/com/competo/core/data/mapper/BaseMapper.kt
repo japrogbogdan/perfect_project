@@ -1,6 +1,6 @@
 package com.competo.core.data.mapper
 
-import com.competo.core.data.exception.InvalidServerResponseException
+import com.competo.core.data.exceptions.InvalidServerResponseException
 import kotlin.reflect.KProperty1
 
 open class BaseMapper<T : Any>(protected var response: T?) {

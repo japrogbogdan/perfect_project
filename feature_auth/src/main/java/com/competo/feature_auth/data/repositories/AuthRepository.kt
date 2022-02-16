@@ -1,9 +1,9 @@
-package com.competo.feature_auth.data.repository
+package com.competo.feature_auth.data.repositories
 
-import com.competo.feature_auth.data.mapper.CheckOtpAndConfirmMapper
-import com.competo.feature_auth.data.model.AccessTokenResponse
-import com.competo.feature_auth.data.model.OtpCodeRequest
-import com.competo.feature_auth.domain.entity.AccessToken
+import com.competo.feature_auth.data.mappers.CheckOtpAndConfirmMapper
+import com.competo.feature_auth.data.models.AccessTokenResponse
+import com.competo.feature_auth.data.models.OtpCodeRequest
+import com.competo.feature_auth.domain.entities.AccessToken
 
 class AuthRepository(private val api: AuthServiceApi) : AuthRepositoryInterface {
 

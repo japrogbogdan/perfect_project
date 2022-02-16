@@ -1,4 +1,4 @@
-package com.competo.feature_auth.data.model
+package com.competo.feature_auth.data.models
 
 import com.google.gson.annotations.SerializedName
 

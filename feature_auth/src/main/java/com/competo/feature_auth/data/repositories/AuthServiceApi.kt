@@ -1,7 +1,7 @@
-package com.competo.feature_auth.data.repository
+package com.competo.feature_auth.data.repositories
 
-import com.competo.feature_auth.data.model.AccessTokenResponse
-import com.competo.feature_auth.data.model.OtpCodeRequest
+import com.competo.feature_auth.data.models.AccessTokenResponse
+import com.competo.feature_auth.data.models.OtpCodeRequest
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST

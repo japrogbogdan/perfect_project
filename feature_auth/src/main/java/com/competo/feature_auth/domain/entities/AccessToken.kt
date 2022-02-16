@@ -1,4 +1,4 @@
-package com.competo.feature_auth.domain.entity
+package com.competo.feature_auth.domain.entities
 
 data class AccessToken(
 

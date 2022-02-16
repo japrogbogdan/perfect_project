@@ -1,4 +1,4 @@
-package com.competo.core.data.exception
+package com.competo.core.data.exceptions
 
 import okhttp3.Response
 

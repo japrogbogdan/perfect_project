@@ -1,8 +1,8 @@
 package com.competo.core.base.retrofit
 
 import android.text.TextUtils
-import com.competo.core.data.exception.ServerException
-import com.competo.core.data.exception.SessionExpiredException
+import com.competo.core.data.exceptions.ServerException
+import com.competo.core.data.exceptions.SessionExpiredException
 import com.competo.core.presentation.preferences.PreferencesHelper
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.OkHttpClient

@@ -1,8 +1,8 @@
-package com.competo.feature_auth.data.mapper
+package com.competo.feature_auth.data.mappers
 
 import com.competo.core.data.mapper.BaseMapper
-import com.competo.feature_auth.data.model.AccessTokenResponse
-import com.competo.feature_auth.domain.entity.AccessToken
+import com.competo.feature_auth.data.models.AccessTokenResponse
+import com.competo.feature_auth.domain.entities.AccessToken
 
 class CheckOtpAndConfirmMapper(tokenModel: AccessTokenResponse) :
     BaseMapper<AccessTokenResponse>(tokenModel) {

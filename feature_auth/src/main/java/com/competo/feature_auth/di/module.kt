@@ -4,8 +4,8 @@ import com.competo.core.base.di.provideService
 import com.competo.core.base.retrofit.provideAuthOkHttpClient
 import com.competo.core.base.retrofit.provideOkHttpClient
 import com.competo.core.base.retrofit.provideRetrofit
-import com.competo.feature_auth.data.repository.AuthRepository
-import com.competo.feature_auth.data.repository.AuthServiceApi
+import com.competo.feature_auth.data.repositories.AuthRepository
+import com.competo.feature_auth.data.repositories.AuthServiceApi
 import com.competo.feature_auth.domain.interactors.AuthInteractor
 import com.competo.feature_auth.presentation.AuthOtpViewModel
 import com.competo.feature_auth.presentation.AuthPhoneViewModel
